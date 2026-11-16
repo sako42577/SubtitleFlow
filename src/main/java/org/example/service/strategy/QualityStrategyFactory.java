@@ -10,6 +10,8 @@ public class QualityStrategyFactory {
                 return new LowQualityStrategy();
             case "720p":
                 return new MediumQualityStrategy();
+            case "1080p":
+                return new HighQualityStrategy();
             case "best":
             default:
                 return new BestQualityStrategy();
