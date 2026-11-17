@@ -1,0 +1,44 @@
+.form-control {
+    width: 100%;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 0.75rem;
+}
+
+.form-control:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-color: #6366f1;
+}
+
+.field-label {
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+}
+
+.settings-select {
+    padding: 0.625rem 0.75rem;
+    color: #fff;
+}
+
+.action-button {
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+.success-button {
+    background-color: #059669;
+}
+
+.success-button:hover {
+    background-color: #10b981;
+}

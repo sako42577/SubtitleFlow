@@ -26,6 +26,7 @@
         body { font-family: 'Inter', sans-serif; }
         .font-mono-code { font-family: 'Fira Code', monospace; }
     </style>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="bg-darkBg text-slate-100 min-h-screen flex items-center justify-center p-4">
 
@@ -43,18 +44,18 @@
     <div class="space-y-4">
         <!-- URL Input with clear English placeholder -->
         <div class="space-y-2">
-            <label for="videoUrl" class="block text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <label for="videoUrl" class="field-label">
                 Video URL (YouTube, TikTok, Instagram)
             </label>
             <input type="text" id="videoUrl" placeholder="Paste video URL here (e.g. https://www.youtube.com/watch?v=...)"
-                   class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/25 transition-all">
+                   class="form-control text-sm px-4 py-3 text-white placeholder-slate-500 focus:ring-2 focus:ring-indigo-500/25 transition-all">
         </div>
 
         <!-- Settings Grid: Quality, Font Size, Color -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
             <div>
-                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Video Quality</label>
-                <select id="videoQuality" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
+                <label class="field-label mb-2">Video Quality</label>
+                <select id="videoQuality" class="settings-select form-control text-sm">
                     <option value="360p">SD 360p (Fastest)</option>
                     <option value="720p" selected>HD 720p (Balanced)</option>
                     <option value="1080p">FHD 1080p (High Quality)</option>
@@ -63,8 +64,8 @@
             </div>
 
             <div>
-                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Font Size</label>
-                <select id="fontSize" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
+                <label class="field-label mb-2">Font Size</label>
+                <select id="fontSize" class="settings-select form-control text-sm">
                     <option value="18">Small (18px)</option>
                     <option value="24" selected>Medium (24px - Default)</option>
                     <option value="32">Large (32px)</option>
@@ -72,8 +73,8 @@
             </div>
 
             <div>
-                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Subtitle Color</label>
-                <select id="fontColor" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
+                <label class="field-label mb-2">Subtitle Color</label>
+                <select id="fontColor" class="settings-select form-control text-sm">
                     <option value="white">White (Classic)</option>
                     <option value="yellow">Yellow (Cinematic)</option>
                     <option value="green">Green</option>
@@ -84,7 +85,7 @@
 
         <!-- Single Action Button -->
         <button id="processBtn" onclick="processVideo()"
-                class="w-full mt-2 bg-indigo-600 hover:bg-indigo-500 active:scale-[0.98] text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-indigo-600/20 transition-all cursor-pointer">
+                class="action-button w-full mt-2 bg-indigo-600 hover:bg-indigo-500 active:scale-[0.98] shadow-lg shadow-indigo-600/20 transition-all">
             Generate Subtitles & Open Editor
         </button>
     </div>
@@ -107,9 +108,9 @@
             <label class="text-sm font-semibold text-slate-200">📝 Subtitle Editor (Review & Fix Timestamps/Text):</label>
             <span class="text-xs text-slate-400">Standard SRT Format</span>
         </div>
-        <textarea id="subText" class="w-full h-80 bg-slate-900 border border-slate-700 rounded-xl p-4 text-sm font-mono-code text-sky-400 leading-relaxed focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 resize-y"></textarea>
+        <textarea id="subText" class="form-control text-sm h-80 p-4 font-mono-code text-sky-400 leading-relaxed focus:ring-2 focus:ring-indigo-500/20 resize-y"></textarea>
 
-        <button onclick="approveAndRender()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-emerald-600/20 transition-all cursor-pointer">
+        <button onclick="approveAndRender()" class="success-button action-button w-full shadow-lg shadow-emerald-600/20 transition-all">
             Burn Subtitles & Generate Final Video
         </button>
     </div>
@@ -125,7 +126,7 @@
         </div>
 
         <div>
-            <a id="downloadBtn" href="#" class="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg shadow-emerald-600/20 transition-all cursor-pointer text-sm">
+            <a id="downloadBtn" href="#" class="success-button action-button inline-flex items-center justify-center gap-2 px-8 shadow-lg shadow-emerald-600/20 transition-all text-sm">
                 ⬇ Download Final Video
             </a>
         </div>
